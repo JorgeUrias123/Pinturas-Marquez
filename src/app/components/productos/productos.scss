@@ -1,0 +1,180 @@
+#productos {
+  padding: 7rem 5rem;
+  background: var(--blanco);
+}
+
+.marca-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--crema);
+  border: 1.5px solid var(--beige);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  max-width: 500px;
+  margin: 0 auto 3.5rem;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  strong {
+    display: block;
+    font-weight: 700;
+    color: var(--cafe-oscuro);
+    font-size: 0.95rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+    color: var(--gris);
+    font-weight: 600;
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--ostra);
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid var(--beige);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px var(--sombra);
+  }
+
+  .blob {
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+
+.card-blanca .blob { background: var(--azul); }
+.card-color  .blob { background: var(--rosa); }
+.card-galon  .blob { background: var(--pistache); }
+
+.card-color {
+  background: linear-gradient(145deg, var(--crema), #f7e3e3 80%);
+}
+
+.product-icon {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cafe-oscuro);
+  margin-bottom: 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.product-sub {
+  font-size: 0.83rem;
+  color: var(--gris);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.price-label {
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gris);
+  min-width: 72px;
+}
+
+.price-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--capuchino);
+}
+
+.ahorro-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #5a8c50;
+  background: rgba(168,196,154,0.25);
+  padding: 0.15rem 0.6rem;
+  border-radius: 100px;
+  border: 1px solid rgba(168,196,154,0.5);
+}
+
+.card-finish {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px dashed var(--beige);
+  font-size: 0.82rem;
+  color: var(--gris);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.finish-tag {
+  display: inline-block;
+  background: var(--crema);
+  border-radius: 100px;
+  padding: 0.2rem 0.8rem;
+  margin-left: 0.4rem;
+  color: var(--cafe-oscuro);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.aplica-nota {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--gris);
+
+  strong { color: var(--capuchino); }
+
+  a {
+    color: var(--capuchino);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.4rem;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@media (max-width: 768px) {
+  #productos { padding: 5rem 1.5rem; }
+}

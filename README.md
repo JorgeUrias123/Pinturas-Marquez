@@ -1,59 +1,76 @@
-# PinturasMarquez
+# Pinturas Márquez – Landing Page Angular 17
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+## Estructura de archivos generados
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+```
+src/
+├── index.html
+├── main.ts
+├── styles.scss                          ← Variables globales + utilidades
+├── assets/
+│   └── images/                          ← Todas las fotos de pintura
+│       ├── all_colors.jpeg
+│       ├── azul-cielo.jpeg
+│       ├── beige.jpeg
+│       ├── blanco.jpeg                  ← Reemplazar con foto real de blanco
+│       ├── blanco-ostion.jpeg
+│       ├── capucchino.jpeg
+│       ├── crema.jpeg                   ← Reemplazar con foto real de crema
+│       ├── gris.jpeg
+│       ├── marca-pintura.jpeg
+│       ├── rosa-dulce.jpeg
+│       └── verde-pistache.jpeg
+└── app/
+    ├── app.component.ts
+    ├── app.config.ts
+    └── components/
+        ├── navbar/       (navbar.component.ts/.html/.scss)
+        ├── hero/         (hero.component.ts/.html/.scss)
+        ├── productos/    (productos.component.ts/.html/.scss)
+        ├── colores/      (colores.component.ts/.html/.scss)
+        ├── confianza/    (confianza.component.ts/.html/.scss)
+        ├── contacto/     (contacto.component.ts/.html/.scss)
+        └── footer/       (footer.component.ts)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Pasos para integrar en tu proyecto
 
-## Code scaffolding
+1. **Copia la carpeta `src/`** completa dentro de tu proyecto `pinturas-marquez/`
+   (reemplaza los archivos que ya existen: `index.html`, `main.ts`, `styles.scss`)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. **Copia las imágenes** a `src/assets/images/`
 
-```bash
-ng generate component component-name
-```
+3. **Verifica `angular.json`** — asegúrate de que los assets estén configurados:
+   ```json
+   "assets": [
+     "src/favicon.ico",
+     "src/assets"
+   ],
+   "styles": [
+     "src/styles.scss"
+   ]
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+4. **Instala dependencias** (si no lo has hecho):
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+5. **Levanta el servidor de desarrollo:**
+   ```bash
+   ng serve
+   ```
+   Abre: http://localhost:4200
 
-## Building
+## Imágenes pendientes
 
-To build the project run:
+Reemplaza estos dos archivos cuando tengas las fotos reales:
+- `src/assets/images/blanco.jpeg`   → foto de la cubeta de pintura blanca
+- `src/assets/images/crema.jpeg`    → foto de la cubeta de pintura crema
 
-```bash
-ng build
-```
+## Personalización rápida
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Colores de la marca** → `src/styles.scss` (variables CSS en `:root`)
+- **Precios** → `src/app/components/productos/productos.component.ts`
+- **Teléfonos** → `src/app/components/contacto/contacto.component.ts`
+- **Textos de colores** → `src/app/components/colores/colores.component.ts`

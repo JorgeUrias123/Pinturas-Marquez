@@ -1,0 +1,44 @@
+<section id="colores">
+
+  <div class="section-header">
+    <div class="section-tag">Nuestra paleta</div>
+    <h2 class="section-title">9 colores para <em>cada espacio</em></h2>
+    <p class="section-desc">Toca cualquier color para ver la descripción</p>
+  </div>
+
+  <!-- Grid de colores con fotos reales -->
+  <div class="colores-grid">
+    @for (color of colores; track color.id) {
+      <div class="color-card" [class.activo]="colorActivo()?.id === color.id" (click)="seleccionar(color)">
+        <div class="color-img-wrap">
+          <img [src]="color.imagen" [alt]="color.nombre">
+          <div class="color-overlay" [style.background]="color.hex + '66'"></div>
+        </div>
+
+        <div class="color-info">
+          <div class="color-dot" [style.background]="color.hex"></div>
+          <span class="color-nombre">{{ color.nombre }}</span>
+        </div>
+
+        @if (colorActivo()?.id === color.id) {
+          <div class="color-desc">{{ color.descripcion }}</div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Preview del color activo -->
+  @if (colorActivo(); as c) {
+    <div class="color-preview">
+      <div class="preview-swatch" [style.background]="c.hex"></div>
+
+      <div class="preview-info">
+        <h3>{{ c.nombre }}</h3>
+        <p>{{ c.descripcion }}</p>
+        <a href="#contacto" class="btn-primary">Pedir este color</a>
+      </div>
+
+      <img [src]="c.imagen" [alt]="c.nombre" class="preview-img">
+    </div>
+  }
+</section>

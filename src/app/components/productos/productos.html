@@ -1,0 +1,50 @@
+<section id="productos">
+
+  <!-- Marca destacada -->
+  <div class="marca-row">
+    <img src="../../../assets/images/marca-pintura.jpeg" alt="Fresh Finish Sherwin-Williams">
+    <div>
+      <strong>Fresh Finish by Sherwin-Williams</strong>
+      <span>Pintura Vinil Acrílica · Interior / Exterior · Acabado Mate</span>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-tag">Presentaciones disponibles</div>
+    <h2 class="section-title">Elige el tamaño <em>ideal</em></h2>
+  </div>
+
+  <div class="products-grid">
+    
+    @for (producto of productos; track producto.id) {
+      <div class="product-card {{ producto.bgClass }}">
+        <div class="blob"></div>
+        <div class="product-icon">
+          <img [src]="producto.icon" alt="">
+        </div>
+        <h3 class="product-name">{{ producto.nombre }}</h3>
+        <p class="product-sub">{{ producto.subtitulo }}</p>
+
+        @for (precio of producto.precios; track precio.label) {
+          <div class="price-row">
+            <span class="price-label">{{ precio.label }}</span>
+            <span class="price-amount">{{ precio.monto }}</span>
+
+            @if (precio.ahorro) {
+              <span class="ahorro-tag">¡Ahorra!</span>
+            }
+          </div>
+        }
+
+        <div class="card-finish">
+          Acabado <span class="finish-tag">Mate</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <p class="aplica-nota">
+    ¿Necesitas que lo apliquemos nosotros? <strong>Solo $25 por m²</strong> con garantía incluida.
+    <a href="#contacto">Contáctanos →</a>
+  </p>
+</section>

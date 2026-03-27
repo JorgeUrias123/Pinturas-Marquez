@@ -1,0 +1,18 @@
+footer {
+  background: var(--cafe-oscuro);
+  color: rgba(240,237,228,0.55);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-size: 0.83rem;
+  line-height: 1.8;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--crema);
+  margin-bottom: 0.4rem;
+  span { color: var(--azul); }
+}
+.footer-marca strong { color: rgba(240,237,228,0.8); }
+.footer-copy { margin-top: 0.4rem; }

@@ -1,0 +1,14 @@
+<nav [class.scrolled]="scrolled()">
+  <div class="nav-logo">Pinturas<span> Márquez</span></div>
+
+  <ul class="nav-links" [class.open]="menuOpen()">
+    <li><a href="#productos" (click)="closeMenu()">Productos</a></li>
+    <li><a href="#colores" (click)="closeMenu()">Colores</a></li>
+    <li><a href="#confianza" (click)="closeMenu()">Nosotros</a></li>
+    <li><a href="#contacto" class="nav-cta" (click)="closeMenu()">Cotizar</a></li>
+  </ul>
+
+  <button class="hamburger" (click)="toggleMenu()" [class.active]="menuOpen()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

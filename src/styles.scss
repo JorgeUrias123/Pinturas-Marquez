@@ -1,1 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700&display=swap');
+
+:root {
+  --blanco: #fafaf7;
+  --ostra: #f0ede4;
+  --beige: #e8dfd0;
+  --crema: #f5edd8;
+  --gris: #b0afa8;
+  --capuchino: #8b6347;
+  --rosa: #f2bfbf;
+  --pistache: #a8c49a;
+  --azul: #9bbcd4;
+  --cafe-oscuro: #4a3728;
+  --texto: #2c2216;
+  --sombra: rgba(74, 55, 40, 0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ostra);
+  color: var(--texto);
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+.section-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--capuchino);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--cafe-oscuro);
+  line-height: 1.1;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--capuchino);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.btn-primary {
+  background: var(--capuchino);
+  color: var(--blanco);
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px var(--sombra);
+}
+
+.btn-primary:hover {
+  background: var(--cafe-oscuro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--sombra);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cafe-oscuro);
+  border: 2px solid var(--beige);
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--capuchino);
+  color: var(--capuchino);
+  transform: translateY(-2px);
+}
